@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+/* Définit la couleur de fond du corps en bleu. Définit la police à Rubik. */
+body {
+  background-color: #0A2344;
+  font-family: 'rubik', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+/* Aligne le texte de l'en-tête au centre. Définit la marge en haut et en bas à 40px, et celle à gauche et à droite à 0. */
+h1 {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Définit la largeur de l'accordéon. Définit la marge à 90px en haut et en bas et auto à gauche et à droite */
+.accordion {
+  margin-top: 70px;
+  color: black;
+  background-color: white;
+  padding: 45px 45px;
+}
+.accordion .container {
+    position: relative;
+    margin: 10px 10px;
+  }
+  
+  /* Positionne les étiquettes par rapport au .container. Ajoute une marge intérieure en haut et en bas et augmente la taille de la police. Fait également de son curseur un pointeur */
+  .accordion .label {
+    position: relative;
+    padding: 10px 0;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 10px;
+  }
+  /* Positionne le signe plus à 5px de la droite. Centrez-le en utilisant la propriété transform. */
+.accordion .label::before {
+    content: '+';
+    color: black;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    font-size: 30px;
+    transform: translateY(-50%);
+  }
+  
+  /* Masque le contenu (height : 0), diminue la taille de la police, justifie le texte et ajoute une transition */
+  .accordion .content {
+    position: relative;
+    background: white;
+    height: 0;
+    font-size: 20px;
+    text-align: justify;
+    width: 100%;
+    overflow: hidden;
+    margin: 10px 0;
+    transition:height 0.5s; ;
+  }
+  
+  /* Définit la largeur, la marge gauche et la bordure de la ligne horizontale entre les contenus */
+  .accordion hr {
+    width: 100;
+    margin-left: 0;
+    border: 1px solid grey;
+  }
+  /* Désactive la partie contenu lorsqu'elle est active. Définit la hauteur */
+.accordion .container.active .content {
+    height: 143px;
+    box-shadow: 1px 2px 5px 0px #c3c3c3;
+    transition:box-shadow 0.5s 0.2s, height 0.5s; ;
+    
+  }
+  .accordion .container .content p {
+    padding: 15px;
+    margin: 0;
+  }
+  
+  /* Passe du signe plus au signe négatif une fois activé */
+  .accordion .container.active .label::before {
+    content: '-';
+    font-size: 30px;
+    transform: rotation(90deg);
+    transition:0.5s;
+    padding-right: 7px;
+  }
+  button {
+    background-color: rgba(0,0,0,.03);
+    border-radius: 5px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 24px;
+    box-shadow: 1px 2px 5px 0px #c3c3c3;
+    width: 100%;
+    border-width: 0px;
+  }
+  .h6{
+    margin: 0;
+    font-size: 18px;
+    padding: 15px 15px 0;
+  }
